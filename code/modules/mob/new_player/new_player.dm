@@ -280,7 +280,7 @@
 	if(GLOB.configuration.jobs.assistant_limit)
 		if(job.title == "Assistant")
 			var/count = 0
-			var/datum/job/officer = SSjobs.GetJob("Security Officer")
+			var/datum/job/officer = SSjobs.GetJob("Офицер безопасности")
 			var/datum/job/warden = SSjobs.GetJob("Warden")
 			var/datum/job/hos = SSjobs.GetJob("Head of Security")
 			count += (officer.current_positions + warden.current_positions + hos.current_positions)
