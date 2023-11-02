@@ -281,7 +281,7 @@
 		if(job.title == "Assistant")
 			var/count = 0
 			var/datum/job/officer = SSjobs.GetJob("Офицер безопасности")
-			var/datum/job/warden = SSjobs.GetJob("Warden")
+			var/datum/job/warden = SSjobs.GetJob("Варден")
 			var/datum/job/hos = SSjobs.GetJob("Head of Security")
 			count += (officer.current_positions + warden.current_positions + hos.current_positions)
 			if(job.current_positions > (GLOB.configuration.jobs.assistant_security_ratio * count))
