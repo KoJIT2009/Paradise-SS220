@@ -529,7 +529,7 @@
 
 		dat += "</td></tr></table></center>"
 	else
-		dat += "<br><br><center>Unfortunately, there are no job slots free currently.<BR>Wait a few minutes, then try again.<BR>Or, try observing the round.</center>"
+		dat += "<br><br><center>К сожалению, there are no job slots free currently.<BR>Wait a few minutes, then try again.<BR>Or, try observing the round.</center>"
 	// Removing the old window method but leaving it here for reference
 //		src << browse(dat, "window=latechoices;size=300x640;can_close=1")
 	// Added the new browser window method
