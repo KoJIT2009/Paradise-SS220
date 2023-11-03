@@ -133,7 +133,7 @@
 		new_player_panel_proc()
 	if(href_list["consent_rejected"])
 		client.tos_consent = FALSE
-		to_chat(usr, "<span class='warning'>Вы должны consent to the terms of service before you can join!</span>")
+		to_chat(usr, "<span class='warning'>Вы должны принять to the terms of service before you can join!</span>")
 		var/datum/db_query/query = SSdbcore.NewQuery("REPLACE INTO privacy (ckey, datetime, consent) VALUES (:ckey, Now(), 0)", list(
 			"ckey" = ckey
 		))
