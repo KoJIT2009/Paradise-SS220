@@ -125,6 +125,23 @@
           "replace": "\tadd_inherent_law(\"Вы не можете вмешиваться в дела других существ, если другое существо - не такой же дрон.\")\n\tadd_inherent_law(\"Вы не можете причинить вред ни одному существу, независимо от намерения или обстоятельств.\")\n\tadd_inherent_law(\"Вы должны заботиться о поддержке, ремонте, улучшении и о питании электроэнергией станции по мере своих возможностей.\")"
         }
       ]
+    },
+    {
+      "path": "code/modules/mob/new_player/new_player.dm",
+      "replaces": [
+        {
+          "original": "\t\t\tvar/datum/job/officer = SSjobs.GetJob(\"Security Officer\")\n\t\t\tvar/datum/job/warden = SSjobs.GetJob(\"Warden\")",
+          "replace": "\t\t\tvar/datum/job/officer = SSjobs.GetJob(\"Офицер безопасности\")\n\t\t\tvar/datum/job/warden = SSjobs.GetJob(\"Варден\")"
+        },
+        {
+          "original": "\tif(character.mind.assigned_role == \"Cyborg\")",
+          "replace": "\tif(character.mind.assigned_role == \"Киборг\")"
+        },
+        {
+          "original": "\t\t\t\t\tGLOB.global_announcer.autosay(\"[character.real_name],[rank ? \" [rank],\" : \" visitor,\" ] [join_message ? join_message : \"has arrived on the station\"].\", \"Arrivals Announcement Computer\", follow_target_override = character)",
+          "replace": "\t\t\t\t\tGLOB.global_announcer.autosay(\"[character.real_name],[rank ? \" [rank],\" : \" visitor,\" ] [join_message ? join_message : \"прибыл на станцию\"].\", \"Arrivals Announcement Computer\", follow_target_override = character)"
+        }
+      ]
     }
   ]
 }
