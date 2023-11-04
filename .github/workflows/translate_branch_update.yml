@@ -23,6 +23,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: 'Git config'
+        uses: actions/checkout@v4
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "SS220Manager"
+
       - name: Update translate branch
         run: |
           git fetch origin translate
@@ -31,7 +37,5 @@ jobs:
 
       - name: 'Push'
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "SS220Manager"
           git commit -m "Sync with master"
           git push origin translate:translate
