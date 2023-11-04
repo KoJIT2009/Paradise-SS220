@@ -28,4 +28,10 @@ jobs:
           git fetch origin translate
           git checkout translate
           git merge master
+
+      - name: 'Push'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "SS220Manager"
+          git commit -m "Sync with master"
           git push origin translate:translate
