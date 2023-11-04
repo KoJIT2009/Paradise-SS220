@@ -23,7 +23,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Create temporary branch
+      - name: Update translate branch
         run: |
           git fetch origin translate
           git checkout translate
