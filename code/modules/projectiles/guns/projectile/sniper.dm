@@ -19,6 +19,15 @@
 	zoom_amt = 7 //Long range, enough to see in front of you, but no tiles behind you.
 	slot_flags = SLOT_FLAG_BACK
 	actions_types = list()
+	execution_speed = 8 SECONDS
+
+/obj/item/gun/projectile/automatic/sniper_rifle/process_fire(atom/target, mob/living/user, message = TRUE, params, zone_override, bonus_spread = 0)
+	if(istype(chambered.BB, /obj/item/projectile/bullet/sniper) && !zoomed)
+		var/obj/item/projectile/bullet/sniper/S = chambered.BB
+		if(S.non_zoom_spread)
+			to_chat(user, "<span class='warning'>[src] must be zoomed in to fire this ammunition accurately!</span>")
+			bonus_spread += S.non_zoom_spread
+	return ..()
 
 /obj/item/gun/projectile/automatic/sniper_rifle/process_fire(atom/target, mob/living/user, message = TRUE, params, zone_override, bonus_spread = 0)
 	if(istype(chambered.BB, /obj/item/projectile/bullet/sniper) && !zoomed)

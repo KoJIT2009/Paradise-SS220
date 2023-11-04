@@ -79,6 +79,10 @@
 
 	var/nanotrasen_relation = "Neutral"
 
+	var/physique = "average"
+
+	var/height = "average height"
+
 	// OOC Metadata:
 	var/metadata = ""
 
@@ -176,6 +180,8 @@
 					organ_data=:organlist,
 					rlimb_data=:rlimblist,
 					nanotrasen_relation=:nanotrasen_relation,
+					physique=:physique,
+					height=:height,
 					speciesprefs=:speciesprefs,
 					socks=:socks,
 					body_accessory=:body_accessory,
@@ -234,6 +240,8 @@
 						"organlist" = (organlist ? organlist : ""),
 						"rlimblist" = (rlimblist ? rlimblist : ""),
 						"nanotrasen_relation" = nanotrasen_relation,
+						"physique" = physique,
+						"height" = height,
 						"speciesprefs" = speciesprefs,
 						"socks" = socks,
 						"body_accessory" = (body_accessory ? body_accessory : ""),
@@ -283,7 +291,7 @@
 			sec_record,
 			gen_record,
 			player_alt_titles,
-			disabilities, organ_data, rlimb_data, nanotrasen_relation, speciesprefs,
+			disabilities, organ_data, rlimb_data, nanotrasen_relation, physique, height, speciesprefs,
 			socks, body_accessory, gear, autohiss,
 			hair_gradient, hair_gradient_offset, hair_gradient_colour, hair_gradient_alpha, custom_emotes, tts_seed)
 		VALUES
@@ -310,7 +318,7 @@
 			:sec_record,
 			:gen_record,
 			:playertitlelist,
-			:disabilities, :organlist, :rlimblist, :nanotrasen_relation, :speciesprefs,
+			:disabilities, :organlist, :rlimblist, :nanotrasen_relation, :physique, :height, :speciesprefs,
 			:socks, :body_accessory, :gearlist, :autohiss_mode,
 			:h_grad_style, :h_grad_offset, :h_grad_colour, :h_grad_alpha, :custom_emotes, :tts_seed)
 	"}, list(
@@ -361,6 +369,8 @@
 		"organlist" = (organlist ? organlist : ""),
 		"rlimblist" = (rlimblist ? rlimblist : ""),
 		"nanotrasen_relation" = nanotrasen_relation,
+		"physique" = physique,
+		"height" = height,
 		"speciesprefs" = speciesprefs,
 		"socks" = socks,
 		"body_accessory" = (body_accessory ? body_accessory : ""),
@@ -457,7 +467,9 @@
 	h_grad_colour = query.item[53]
 	h_grad_alpha = query.item[54]
 	var/custom_emotes_tmp = query.item[55]
-	tts_seed = query.item[56]
+	physique = query.item[56]
+	height = query.item[57]
+	tts_seed = query.item[58]
 
 	//Sanitize
 	var/datum/species/SP = GLOB.all_species[species]
@@ -477,6 +489,12 @@
 
 	if(isnull(nanotrasen_relation))
 		nanotrasen_relation = initial(nanotrasen_relation)
+
+	if(isnull(physique))
+		physique = initial(physique)
+
+	if(isnull(height))
+		height = initial(height)
 
 	if(isnull(speciesprefs))
 		speciesprefs = initial(speciesprefs)
@@ -961,21 +979,21 @@
 	if(underwear && (current_species.clothing_flags & HAS_UNDERWEAR))
 		var/datum/sprite_accessory/underwear/U = GLOB.underwear_list[underwear]
 		if(U)
-			var/u_icon = U.sprite_sheets && (current_species.name in U.sprite_sheets) ? U.sprite_sheets[current_species.name] : U.icon //Species-fit the undergarment.
+			var/u_icon = U.sprite_sheets && (current_species.sprite_sheet_name in U.sprite_sheets) ? U.sprite_sheets[current_species.sprite_sheet_name] : U.icon //Species-fit the undergarment.
 			underwear_s = new/icon(u_icon, "uw_[U.icon_state]_s", ICON_OVERLAY)
 
 	var/icon/undershirt_s = null
 	if(undershirt && (current_species.clothing_flags & HAS_UNDERSHIRT))
 		var/datum/sprite_accessory/undershirt/U2 = GLOB.undershirt_list[undershirt]
 		if(U2)
-			var/u2_icon = U2.sprite_sheets && (current_species.name in U2.sprite_sheets) ? U2.sprite_sheets[current_species.name] : U2.icon
+			var/u2_icon = U2.sprite_sheets && (current_species.sprite_sheet_name in U2.sprite_sheets) ? U2.sprite_sheets[current_species.sprite_sheet_name] : U2.icon
 			undershirt_s = new/icon(u2_icon, "us_[U2.icon_state]_s", ICON_OVERLAY)
 
 	var/icon/socks_s = null
 	if(socks && (current_species.clothing_flags & HAS_SOCKS))
 		var/datum/sprite_accessory/socks/U3 = GLOB.socks_list[socks]
 		if(U3)
-			var/u3_icon = U3.sprite_sheets && (current_species.name in U3.sprite_sheets) ? U3.sprite_sheets[current_species.name] : U3.icon
+			var/u3_icon = U3.sprite_sheets && (current_species.sprite_sheet_name in U3.sprite_sheets) ? U3.sprite_sheets[current_species.sprite_sheet_name] : U3.icon
 			socks_s = new/icon(u3_icon, "sk_[U3.icon_state]_s", ICON_OVERLAY)
 
 	var/icon/clothes_s = null
@@ -1782,6 +1800,8 @@
 	character.dna.real_name = real_name
 	character.name = character.real_name
 
+	character.physique = physique
+	character.height = height
 	character.flavor_text = flavor_text
 	character.med_record = med_record
 	character.sec_record = sec_record

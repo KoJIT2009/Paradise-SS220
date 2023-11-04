@@ -10,9 +10,11 @@
 #define CHANNEL_FIREALARM 1016 //fire alarm alarms
 #define CHANNEL_ASH_STORM 1015
 #define CHANNEL_RADIO_NOISE 1014 // radio headset noise
+#define CHANNEL_BOSS_MUSIC 1013
 // SS220 ADDITION START
-#define CHANNEL_TTS_RADIO 1013
-#define CHANNEL_TTS_LOCAL 1012
+#define CHANNEL_TTS_RADIO 1012
+#define CHANNEL_TTS_LOCAL 1011
+#define CHANNEL_CINEMATIC 1010
 // SS220 ADDITION END
 
 #define USER_VOLUME(M, C) M?.client?.prefs.get_channel_volume(C)
@@ -20,12 +22,14 @@
 //THIS SHOULD ALWAYS BE THE LOWEST ONE!
 //KEEP IT UPDATED
 
-#define CHANNEL_HIGHEST_AVAILABLE 1011 // SS220 EDIT
+#define CHANNEL_HIGHEST_AVAILABLE 1009 // SS220 EDIT
 
 #define MAX_INSTRUMENT_CHANNELS (128 * 6)
 
 ///Default range of a sound.
 #define SOUND_RANGE 17
+///Easy-to-math sound range for simpler coding with specific variables. Insert the exact range you wish the sound to be heard from.
+#define SOUND_RANGE_SET(amount) amount - 17
 ///default extra range for sounds considered to be quieter
 #define SHORT_RANGE_SOUND_EXTRARANGE -9
 ///The range deducted from sound range for things that are considered silent / sneaky

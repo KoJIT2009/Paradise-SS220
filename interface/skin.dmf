@@ -27,50 +27,50 @@ menu "menu"
 		category = "&Вид"
 	elem "stretch"
 		name = "&Растянуть"
-		command = ".winset \"mapwindow.map.icon-size=0\""
+		command = ".winset \"paramapwindow.map.icon-size=0\""
 		category = "&Размер"
 		is-checked = true
 		can-check = true
 		group = "size"
 	elem "icon128"
 		name = "&128x128 (4x)"
-		command = ".winset \"mapwindow.map.icon-size=128\""
+		command = ".winset \"paramapwindow.map.icon-size=128\""
 		category = "&Размер"
 		can-check = true
 		group = "size"
 	elem "icon112"
 		name = "&112x112 (3.5x)"
-		command = ".winset \"mapwindow.map.icon-size=112\""
+		command = ".winset \"paramapwindow.map.icon-size=112\""
 		category = "&Размер"
 		can-check = true
 		group = "size"
 	elem "icon96"
 		name = "&96x96 (3x)"
-		command = ".winset \"mapwindow.map.icon-size=96\""
+		command = ".winset \"paramapwindow.map.icon-size=96\""
 		category = "&Размер"
 		can-check = true
 		group = "size"
 	elem "icon80"
 		name = "&80x80 (2.5x)"
-		command = ".winset \"mapwindow.map.icon-size=80\""
+		command = ".winset \"paramapwindow.map.icon-size=80\""
 		category = "&Размер"
 		can-check = true
 		group = "size"
 	elem "icon64"
 		name = "&64x64 (2x)"
-		command = ".winset \"mapwindow.map.icon-size=64\""
+		command = ".winset \"paramapwindow.map.icon-size=64\""
 		category = "&Размер"
 		can-check = true
 		group = "size"
 	elem "icon48"
 		name = "&48x48 (1.5x)"
-		command = ".winset \"mapwindow.map.icon-size=48\""
+		command = ".winset \"paramapwindow.map.icon-size=48\""
 		category = "&Размер"
 		can-check = true
 		group = "size"
 	elem "icon32"
 		name = "&32x32"
-		command = ".winset \"mapwindow.map.icon-size=32\""
+		command = ".winset \"paramapwindow.map.icon-size=32\""
 		category = "&Размер"
 		can-check = true
 		group = "size"
@@ -80,26 +80,26 @@ menu "menu"
 		saved-params = "is-checked;command"
 	elem "NN"
 		name = "&По соседним пикселям"
-		command = ".winset \"mapwindow.map.zoom-mode=distort\""
+		command = ".winset \"paramapwindow.map.zoom-mode=distort\""
 		category = "&Масштабирование"
 		can-check = true
 		group = "scale"
 	elem "PS"
 		name = "&Точечный отбор"
-		command = ".winset \"mapwindow.map.zoom-mode=normal\""
+		command = ".winset \"paramapwindow.map.zoom-mode=normal\""
 		category = "&Масштабирование"
 		can-check = true
 		is-checked = true
 		group = "scale"
 	elem "BL"
 		name = "&Билинейное"
-		command = ".winset \"mapwindow.map.zoom-mode=blur\""
+		command = ".winset \"paramapwindow.map.zoom-mode=blur\""
 		category = "&Масштабирование"
 		can-check = true
 		group = "scale"
 	elem "textmode"
 		name = "&Текстовый режим"
-		command = ".winset \"menu.textmode.is-checked=true?mapwindow.map.text-mode=true:mapwindow.map.text-mode=false\""
+		command = ".winset \"menu.textmode.is-checked=true?paramapwindow.map.text-mode=true:paramapwindow.map.text-mode=false\""
 		category = "&Вид"
 		can-check = true
 	elem
@@ -114,7 +114,7 @@ menu "menu"
 		can-check = true
 		is-checked = true
 		saved-params = "is-checked"
-		command = ".winset \"menu.statusbar.is-checked=true?mapwindow.status_bar.is-visible=true:mapwindow.status_bar.is-visible=false\""
+		command = ".winset \"menu.statusbar.is-checked=true?paramapwindow.status_bar.is-visible=true:paramapwindow.status_bar.is-visible=false\""
 	elem
 		name = "&Помощь"
 	elem
@@ -145,7 +145,7 @@ window "mainwindow"
 		anchor1 = 0,0
 		anchor2 = 100,100
 		saved-params = "splitter"
-		left = "mapwindow"
+		left = "paramapwindow"
 		right = "rpane"
 		is-vert = true
 	elem "tooltip"
@@ -153,8 +153,8 @@ window "mainwindow"
 		size = 999x999
 		is-visible = false
 
-window "mapwindow"
-	elem "mapwindow"
+window "paramapwindow"
+	elem "paramapwindow"
 		type = MAIN
 		size = 640x480
 		is-pane = true
@@ -171,7 +171,7 @@ window "mapwindow"
 		saved-params = "icon-size"
 		zoom-mode = "normal"
 		style = ".center { text-align: center; } .maptext { font-family: 'Small Fonts'; font-size: 7px; -dm-text-outline: 1px black; color: white; line-height: 1.1; } .small { font-size: 6px; } .big { font-size: 8px; } .reallybig { font-size: 8px; } .extremelybig { font-size: 8px; } .clown { color: #FF69Bf;} .tajaran {color: #803B56;} .skrell {color: #00CED1;} .solcom {color: #22228B;} .com_srus {color: #7c4848;} .zombie\t{color: #ff0000;} .soghun {color: #228B22;} .vox {color: #AA00AA;} .diona {color: #804000; font-weight: bold;} .trinary {color: #727272;} .kidan {color: #664205;} .slime {color: #0077AA;} .drask {color: #a3d4eb;} .vulpkanin {color: #B97A57;} .abductor {color: #800080; font-style: italic;} .his_grace { color: #15D512; } .hypnophrase { color: #0d0d0d; font-weight: bold; } .yell { font-weight: bold; }"
-		on-show = ".winset \"menu.statusbar.is-checked=true?mapwindow.status_bar.is-visible=true:mapwindow.status_bar.is-visible=false\""
+		on-show = ".winset \"menu.statusbar.is-checked=true?paramapwindow.status_bar.is-visible=true:paramapwindow.status_bar.is-visible=false\""
 	elem "title_browser"
 		type = BROWSER
 		pos = 0,0
