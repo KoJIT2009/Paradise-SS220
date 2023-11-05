@@ -246,7 +246,7 @@
 
 /******************** Drone ********************/
 /datum/ai_laws/drone
-	name = "Maintenance Protocols"
+	name = "Протоколы обслуживания"
 	law_header = "Maintenance Protocols"
 
 /datum/ai_laws/drone/New()
