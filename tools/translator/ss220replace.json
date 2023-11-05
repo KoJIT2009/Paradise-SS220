@@ -329,6 +329,15 @@
           "replace": "\tname = \"Протоколы обслуживания\""
         }
       ]
+    },
+    {
+      "path": "code/datums/ai_law_sets.dm",
+      "replaces": [
+        {
+          "original": "\tname = \"Asimov\"",
+          "replace": "\tname = \"Азимов\""
+        }
+      ]
     }
   ]
 }
