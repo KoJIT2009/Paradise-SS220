@@ -126,7 +126,7 @@
 
 /******************** Antimov ********************/
 /datum/ai_laws/antimov
-	name = "Antimov"
+	name = "Антимов"
 	law_header = "Primary Mission Objectives"
 	selectable = TRUE
 
