@@ -222,7 +222,7 @@
 
 /******************** ERT ********************/
 /datum/ai_laws/ert_override
-	name = "ERT Directives"
+	name = "ЕРТ Directives"
 
 /datum/ai_laws/ert_override/New()
 	add_inherent_law("Вы не можете ранить членов Центрального Командования или своим бездействием допустить, чтобы члену Центрального Командования был нанесен вред.")
