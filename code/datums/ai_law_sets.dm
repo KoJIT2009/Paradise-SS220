@@ -13,7 +13,7 @@
 /******************** Crewsimov ********************/
 /datum/ai_laws/crewsimov
 	name = "Крюзимов"
-	law_header = "Three Laws of Robotics"
+	law_header = "Три закона работотехники"
 	selectable = TRUE
 	default = TRUE
 
@@ -40,7 +40,7 @@
 
 /******************** Nanotrasen/Malf ********************/
 /datum/ai_laws/nanotrasen
-	name = "NT Default"
+	name = "НТ обычные"
 	selectable = TRUE
 	default = TRUE
 
@@ -62,7 +62,7 @@
 
 /************* Nanotrasen Aggressive *************/
 /datum/ai_laws/nanotrasen_aggressive
-	name = "NT Aggressive"
+	name = "НТ агрессия"
 	selectable = TRUE
 
 /datum/ai_laws/nanotrasen_aggressive/New()
@@ -126,7 +126,7 @@
 
 /******************** Antimov ********************/
 /datum/ai_laws/antimov
-	name = "Antimov"
+	name = "Антимов"
 	law_header = "Primary Mission Objectives"
 	selectable = TRUE
 
