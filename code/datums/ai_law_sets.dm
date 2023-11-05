@@ -1,6 +1,6 @@
 /******************** Asimov ********************/
 /datum/ai_laws/asimov
-	name = "Asimov"
+	name = "Азимов"
 	law_header = "Three Laws of Robotics"
 	selectable = TRUE
 
