@@ -338,6 +338,27 @@
           "replace": "\tname = \"Азимов\""
         }
       ]
+    },
+    {
+      "path": "code/datums/ai_law_sets.dm",
+      "replaces": [
+        {
+          "original": "\tlaw_header = \"Three Laws of Robotics\"",
+          "replace": "\tlaw_header = \"Три закона работотехники\""
+        },
+        {
+          "original": "\tname = \"NT Default\"",
+          "replace": "\tname = \"НТ обычные\""
+        },
+        {
+          "original": "\tname = \"NT Aggressive\"",
+          "replace": "\tname = \"НТ агрессия\""
+        },
+        {
+          "original": "\tname = \"Antimov\"",
+          "replace": "\tname = \"Антимов\""
+        }
+      ]
     }
   ]
 }
