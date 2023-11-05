@@ -62,7 +62,7 @@
 
 /************* Nanotrasen Aggressive *************/
 /datum/ai_laws/nanotrasen_aggressive
-	name = "NT Aggressive"
+	name = "НТ агрессия"
 	selectable = TRUE
 
 /datum/ai_laws/nanotrasen_aggressive/New()
