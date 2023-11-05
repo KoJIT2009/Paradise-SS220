@@ -99,7 +99,7 @@
 
 /******************** Corporate ********************/
 /datum/ai_laws/corporate
-	name = "Corporate"
+	name = "Корпоративный"
 	law_header = "Corporate Regulations"
 	selectable = TRUE
 	default = TRUE
