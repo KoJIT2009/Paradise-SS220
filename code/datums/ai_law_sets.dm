@@ -13,7 +13,7 @@
 /******************** Crewsimov ********************/
 /datum/ai_laws/crewsimov
 	name = "Крюзимов"
-	law_header = "Three Laws of Robotics"
+	law_header = "Три закона работотехники"
 	selectable = TRUE
 	default = TRUE
 
