@@ -74,7 +74,7 @@
 
 /******************** Robocop ********************/
 /datum/ai_laws/robocop
-	name = "Robocop"
+	name = "Робокоп"
 	selectable = TRUE
 
 /datum/ai_laws/robocop/New()
