@@ -40,7 +40,7 @@
 
 /******************** Nanotrasen/Malf ********************/
 /datum/ai_laws/nanotrasen
-	name = "NT Default"
+	name = "НТ обычные"
 	selectable = TRUE
 	default = TRUE
 
