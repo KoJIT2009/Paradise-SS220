@@ -348,6 +348,16 @@
 		qdel(src)
 		return
 
+
+
+
+
+
+
+
+
+
+
 	//Find our spawning point.
 	var/join_message
 
