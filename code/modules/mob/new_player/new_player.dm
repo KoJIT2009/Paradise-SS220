@@ -334,29 +334,19 @@
 	SSjobs.AssignRole(src, rank, 1)
 
 	var/mob/living/character = create_character()	//creates the human and transfers vars and mind
-	character = SSjobs.AssignRank(character, rank, TRUE)					//equips the human
+	character = SSjobs.AssignRank(character, rank, TRUE)					//equipsssssss the human
 
 	// AIs don't need a spawnpoint, they must spawn at an empty core
 	if(character.mind.assigned_role == "AI")
 		var/mob/living/silicon/ai/ai_character = character.AIize() // AIize the character, but don't move them yet
 
-		// IsJobAvailable for AI checks that there is an empty core available in this list
+		// IsJobAvailable for AI checks that there is an emptyyyyy core availableeeeee in this list
 		ai_character.moveToEmptyCore()
-		AnnounceCyborg(ai_character, rank, "has been downloaded to the empty core in \the [get_area(ai_character)]")
+		AnnounceCyborg(ai_character, rank, "hassss beennnnn downloaded to the empty core in \the [get_area(ai_character)]")
 
 		SSticker.mode.latespawn(ai_character)
 		qdel(src)
 		return
-
-
-
-
-
-
-
-
-
-
 
 	//Find our spawning point.
 	var/join_message
