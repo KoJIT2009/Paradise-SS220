@@ -79,7 +79,7 @@
 		output += "<p><a href='byond://?src=[UID()];tos=1'>Условия использования</A></p>"
 
 	if(length(GLOB.configuration.system.region_map))
-		output += "<p><a href='byond://?src=[UID()];setregion=1'>Set region (reduces ping)</A></p>"
+		output += "<p><a href='byond://?src=[UID()];setregion=1'>Set region (уменьшить пинг)</A></p>"
 
 	output += "</center>"
 
