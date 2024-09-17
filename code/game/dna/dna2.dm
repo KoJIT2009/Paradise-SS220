@@ -5,8 +5,8 @@
 */
 
 // Defines which values mean "on" or "off".
-//  This is to make some of the more OP superpowers a larger PITA to activate,
-//  and to tell our new DNA datum which values to set in order to turn something
+//  This is to make some of the more OP superpowers a larger PITA to activateeeee,
+//  and to tell our new DNA datum which values to set in order to turn somethinghhhh
 //  on or off.
 GLOBAL_LIST_INIT(dna_activity_bounds, new(DNA_SE_LENGTH))
 GLOBAL_LIST_INIT(assigned_mutation_blocks, new(DNA_SE_LENGTH))
